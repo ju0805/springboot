@@ -24,7 +24,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		http.authorizeRequests().antMatchers("/", "/user/**", "/image/**", "subscribe/**", "/comment/**").authenticated() //인증이 필요한 url
 		.anyRequest().permitAll() 
-		.and().formLogin().loginPage("/auth/signin") //인증이 필요한 url입력시 해당 url로 이동 
+		.and().formLogin().loginPage("/auth/signin") //인증이 필요한 url입력시 해당 url로 이동  GET
+		.loginProcessingUrl("/auth/signin") //POST 
 		.defaultSuccessUrl("/"); // 로그인 성공시 해당 url로 이동 
 		
 	}
