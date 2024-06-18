@@ -22,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		//기존 시큐리티 기능 비활성화 
 		http.csrf().disable();
 		
-		http.authorizeRequests().antMatchers("/", "/user/**", "/image/**", "subscribe/**", "/comment/**").authenticated() //인증이 필요한 url
+		http.authorizeRequests().antMatchers("/", "/user/**", "/image/**", "subscribe/**", "/comment/**", "/api/**").authenticated() //인증이 필요한 url
 		.anyRequest().permitAll() 
 		.and().formLogin().loginPage("/auth/signin") //인증이 필요한 url입력시 해당 url로 이동  GET
 		.loginProcessingUrl("/auth/signin") //POST 
