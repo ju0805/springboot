@@ -13,6 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 
 import com.cos.photogramstart.domain.image.Image;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 
@@ -55,6 +56,7 @@ public class User {
 	
 	//양방향 맵핑 
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY) // table column x 
+	@JsonIgnoreProperties({"user"})
 	private List<Image> images;
 	
 	

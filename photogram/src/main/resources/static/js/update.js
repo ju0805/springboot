@@ -15,7 +15,7 @@ function update(userId, event) {
         contentType:"application/x-www-form-urlencoded; charset=UTF-8"
     }).done(res=>{
 		console.log("성공", res)
-		location.href = `/user/${userId}/update`
+		location.href = `/user/${userId}`;
 	}).fail(error=>{
 		if(error.data == null){
 			alert(error.responseJSON.message);

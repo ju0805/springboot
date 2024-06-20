@@ -3,6 +3,7 @@ package com.cos.photogramstart.domain.image;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -35,7 +36,7 @@ public class Image {
 	//이미지 댓글 정보 
 	
 	@JoinColumn(name="userId")
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	private User user;
 	
 	private LocalDateTime createDate;

@@ -33,8 +33,6 @@ public class UserApiController {
 			@Valid UserUpdateDto userUpdateDto, 
 			BindingResult bindingResult, 
 			@AuthenticationPrincipal PrincipalDetails principalDetails) {
-		System.out.println("test--------------");
-		System.out.println(userUpdateDto.toEntity());
 		
 		
 		//validation error처리 
