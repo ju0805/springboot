@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 
 import com.cos.photogramstart.domain.user.User;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -35,6 +36,7 @@ public class Image {
 	//이미지 좋아요 정보 
 	//이미지 댓글 정보 
 	
+	@JsonIgnoreProperties({"images", "password"})
 	@JoinColumn(name="userId")
 	@ManyToOne(fetch = FetchType.EAGER)
 	private User user;
