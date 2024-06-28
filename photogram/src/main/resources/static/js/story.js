@@ -7,6 +7,8 @@
 	(5) 댓글삭제
  */
 
+let principalId = $("#principalId").val();
+
 // (1) 스토리 로드하기
 let page = 0
 
@@ -204,6 +206,16 @@ function addComment(imageId) {
 
 // (5) 댓글 삭제
 function deleteComment(commentId) {
+	
+	$.ajax({
+		type: "delete",
+		url: `/api/comment/${commentId}`,
+		dataType: "json"	
+	}).done(res=>{
+		$(`#storyCommentItem-${commentId}`).remove();
+	}).fail(error=>{
+		console.log("오류",error);
+	});
 
 }
 
