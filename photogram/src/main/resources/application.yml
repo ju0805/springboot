@@ -35,6 +35,18 @@ spring:
     user:
       name: test
       password: 1234   
-
-file:
-  path: /Users/ju/Desktop/workspace/upload/
+      
+  
+    oauth2:
+      client:
+        registration:
+          facebook:
+            client-id: 
+            client-secret: 
+            scope:
+            - public_profile
+            - email
+        
+    file:
+      path:/Users/ju/Desktop/workspace/upload/
+          

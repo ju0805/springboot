@@ -27,6 +27,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 public class Comment {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -49,5 +50,5 @@ public class Comment {
 	@PrePersist
 	public void createDate() {
 		this.createDate = LocalDateTime.now();
-	}
+	}	
 }
